@@ -1,0 +1,219 @@
+/* Thiết lập font chữ chính và đặc tính trang trí */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Thiết lập phần container chính giữa trang web với kích thước và màu nền */
+.container {
+    width: 80%;
+    margin: auto;
+    background-color: #fff;
+}
+
+/* Header top với logo và navigation */
+.header-top {
+    background-color: #f8f9fa; /* Màu nền */
+    color: #dc3545; /* Màu chữ */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #dee2e6; /* Viền dưới */
+}
+
+.logo {
+    width: 150px; /* Kích thước logo */
+}
+
+.navigation-bar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation-bar li {
+    margin-left: 20px;
+}
+
+.navigation-bar a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Banner tiêu đề */
+.header-banner {
+    background-color: #f8f9fa; /* Màu nền */
+    color: #343a40; /* Màu chữ */
+    text-align: center;
+    padding: 20px 0;
+}
+
+.header-banner h1 {
+    margin: 0;
+}
+
+h1 {
+    color: #dc3545; /* Màu chữ */
+    text-align: center;
+}
+
+/* Form đăng ký */
+form {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+input[type="radio"] {
+    width: calc(100% - 22px); /* Giảm kích thước input để tạo chỗ cho viền */
+    padding: 10px;
+    border: 1px solid #ced4da; /* Màu viền */
+    border-radius: 4px;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus {
+    outline: none;
+    border-color: #495057; /* Màu viền khi focus */
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Màu nền */
+    color: #fff; /* Màu chữ */
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Màu nền hover */
+}
+
+/* Phần đăng ký với màu nền đỏ và chữ màu trắng */
+.registration-section {
+    background-color: #dc3545; /* Màu nền */
+    color: white; /* Màu chữ */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Các môn học với hiển thị dạng danh sách ngang */
+.majors-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-column,
+.right-column {
+    width: 45%;
+}
+
+/* Lựa chọn môn học */
+.major-option {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.major-option input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Nút hiển thị chi tiết */
+button {
+    background-color: #fff; /* Màu nền */
+    color: #dc3545; /* Màu chữ */
+    border: 2px solid #dc3545; /* Viền */
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+button:hover {
+    background-color: #dc3545; /* Màu nền hover */
+    color: white; /* Màu chữ hover */
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+  
+  .navigation-bar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .navigation-bar ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  .header-banner {
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .radio-buttons {
+    display: flex;
+  }
+  
+  .radio-buttons label {
+    margin-right: 20px;
+  }
+  
+  fieldset {
+    margin-bottom: 20px;
+  }
+  
+  legend {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  button[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }

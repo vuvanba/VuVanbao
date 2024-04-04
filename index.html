@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng ký Sinh Viên - Cao đẳng Việt Mỹ</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-top">
+        <img src="Logo cao dang viet my.webp" alt="Logo Cao đẳng Việt Mỹ" class="logo">
+        <nav class="navigation-bar">
+          <ul>
+            <li><a href="#">Trang Chủ</a></li>
+            <li><a href="#">Thông Tin</a></li>
+            <li><a href="#">Liên Hệ</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-banner">
+        <h1>HỒ SƠ XÉT TUYỂN CAO ĐẲNG TRỰC TUYẾN</h1>
+      </div>
+    </header>
+
+    <form id="registrationForm" onsubmit="return validateForm()">
+      <fieldset>
+        <legend>Thông tin cá nhân</legend>
+        <div class="form-group">
+          <label for="full_name">Họ và tên: *</label>
+          <input type="text" id="full_name" name="full_name" required>
+        </div>
+        <div class="form-group">
+          <label for="gender">Giới tính: *</label>
+          <div class="radio-buttons">
+            <label><input type="radio" id="gender_female" name="gender" value="female" required> Nữ</label>
+            <label><input type="radio" id="gender_male" name="gender" value="male" required> Nam</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="date_of_birth">Ngày sinh: *</label>
+          <input type="date" id="date_of_birth" name="date_of_birth" required>
+        </div>
+        <div class="form-group">
+          <label for="place_of_birth">Nơi sinh: </label>
+          <input type="text" id="place_of_birth" name="place_of_birth">
+        </div>
+        <div class="form-group">
+          <label for="ethnicity">Dân tộc: </label>
+          <input type="text" id="ethnicity" name="ethnicity">
+        </div>
+        <div class="form-group">
+          <label for="religion">Tôn giáo: </label>
+          <input type="text" id="religion" name="religion">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Hộ khẩu thường trú</legend>
+        <div class="form-group">
+          <label for="permanent_address">Địa chỉ: *</label>
+          <input type="text" id="permanent_address" name="permanent_address" required>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Thông tin học tập</legend>
+        <div class="form-group">
+          <label for="high_school_name">Tên trường THPT: *</label>
+          <input type="text" id="high_school_name" name="high_school_name" required>
+        </div>
+        <div class="form-group">
+          <label for="high_school_type">Loại hình trường THPT: *</label>
+          <select id="high_school_type" name="high_school_type" required>
+            <option value="public">Công lập</option>
+<option value="private">Tư thục</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="graduation_year">Năm tốt nghiệp: *</label>
+          <input type="number" min="1990" max="2024" id="graduation_year" name="graduation_year" required>
+        </div>
+      
+    </fieldset>
+
+    <fieldset>
+      <legend>Thông tin khác</legend>
+      <div class="form-group">
+        <label for="identification_number">Số chứng minh nhân dân/Căn cước công dân: *</label>
+        <input type="text" id="identification_number" name="identification_number" required>
+      </div>
+      <div class="form-group">
+        <label for="issue_date">Ngày cấp: *</label>
+        <input type="date" id="issue_date" name="issue_date" required>
+      </div>
+      <div class="form-group">
+        <label for="issue_place">Nơi cấp: *</label>
+        <input type="text" id="issue_place" name="issue_place" required>
+      </div>
+      <div class="form-group">
+        <label>Ngành học mong muốn: *</label><br>
+        <label><input type="radio" name="field_of_study" value="cntt" required> Công nghệ thông tin</label><br>
+        <label><input type="radio" name="field_of_study" value="ktkd" required> Kinh tế - Kế toán</label><br>
+        <label><input type="radio" name="field_of_study" value="ddns" required> Điều dưỡng</label><br>
+        <label><input type="radio" name="field_of_study" value="dl" required> Du lịch</label>
+<label><input type="radio" name="field_of_study" value="dl" required> Digital Mảketing</label>
+<label><input type="radio" name="field_of_study" value="dl" required>  Quản trị khách sạn</label>
+<label><input type="radio" name="field_of_study" value="dl" required> Phiên dịch Tiếng Anh thương mại</label>
+<label><input type="radio" name="field_of_study" value="dl" required> Tiếng Hàn</label>
+<label><input type="radio" name="field_of_study" value="dl" required> Chăm sóc sắc đẹp</label>
+<label><input type="radio" name="field_of_study" value="dl" required> Tài chính đầu tư</label>
+<label><input type="radio" name="field_of_study" value="dl" required> Quản trị bán hàng</label>
+<label><input type="radio" name="field_of_study" value="dl" required> Quản lý công nghiệp</label>
+<label><input type="radio" name="field_of_study" value="dl" required> Logistics</label>
+        
+      </div>
+    </fieldset>
+    <script>
+        document.getElementById('registrationForm').onsubmit = function(event) {
+            event.preventDefault();
+            var formData = new FormData(this);
+            fetch('http://localhost:5000', {
+                method: 'POST',
+                body: new URLSearchParams(formData),
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+})
+            .catch(error => console.error('Error:', error));
+        };
+    </script>
+    <button type="submit" class="submit-button">Nộp hồ sơ</button>
+    
+    </form>
+      </div>
+      
+      </body>
+    </html>
